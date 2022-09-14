@@ -1,0 +1,239 @@
+/* CHEAT FONT */
+@font-face {
+    font-family: "CheatFontBold";
+    src: url("fonts/CheatFontBold.woff") format("woff"),
+         url("fonts/CheatFontBold.ttf") format("truetype");
+    font-weight: bold;
+  }
+
+/* GLOBAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY GLOBAL*/
+body {
+    background-color: #E9EBED;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5em;
+    margin: auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.code {
+    border-radius: 5px;
+    background-color: #F7F7F7;
+    color: #496f92;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0 5px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: lighter;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    line-height: 3em;
+    margin: 50px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "CheatFontBold", sans-serif;
+    font-size: 2.5em;
+}
+
+#author-designer {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* MAIN */
+aside {
+    background-color: #FFB3BB;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+}
+
+.article-card {
+    background-color: #fff;
+    border: 1px solid #4C6D91;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.card-heading {
+    background-color: #4C6D91;
+    padding: 10px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-body ul {
+    padding-left: 15px;
+}
+
+/* MAIN: First Grid */
+@media only screen and (min-width: 900px) {
+    .article-grid { 
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 35% auto; 
+    }
+
+    .section-grid { 
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto auto; 
+    }
+}
+
+/* MAIN: Syntax */
+.code-canvas {
+    background-color: #F7F7F7;
+    border-left: 5px solid #4C6D91;
+    margin: 15px 0 15px;
+    padding: 10px;
+}
+
+.code-canvas .indent {
+    margin-left: 15px;
+}
+
+/* Syntax: Code Colors */
+.purple { color: purple; } .red { color: red; } .green { color: green; }
+
+
+/* MAIN: Heads-Up */
+#heads-up .card-heading {
+    background-color: #f83549;
+}
+
+#heads-up .code-canvas {
+    background-color: #f8d7db;
+    border-left: 5px solid #f83549;
+}
+
+/* MAIN: Tip */
+#tip .card-heading {
+    background-color: #84c497;
+}
+
+/* MAIN: Second Grid */
+@media only screen and (min-width: 900px) {
+    .article-grid2 { 
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* TABLES */
+table  {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: #c0d1e2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table td {
+    border: 1px solid gainsboro;
+    padding: 15px;
+}
+
+/* Table 1 */
+.middle-column {
+    width: 50%;
+}
+
+/* Table 2 */
+#table2 {
+    text-align: center;
+}
+
+.small {
+    font-size: 0.8em;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 600px) {
+    #table2 td img {
+        height: auto;
+        width: 35%;
+    }
+}
+
+/* Table 3 */
+.name-column {
+    width: 13%;
+}
+
+/* MAIN: References & Recommended Resources */
+#references .card-body {
+    padding: 20px 3em;
+}
+
+#to-top {
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #4C6D91;
+    color: #fff;
+    margin: 30px 0 0;
+    padding: 20px 3em;
+    text-align: center;
+}
+
+/* FOOTER: Site Credits */
+.site-credits a {
+    color: #fff;
+}
+
+.site-credits a:hover {
+    color: #FFB3BB;
+}
+
+/* FOOTER: Disclaimer */
+.disclaimer {
+    margin-top: 30px;
+    padding: 0 2em;
+}
+
+.disclaimer a {
+    color: #fff;
+}
+
+.disclaimer a:hover {
+    color: #FFB3BB;
+}
+
+/* FOOTER CSS Validation */
+#css-validation {
+    margin-top: 20px;
+    text-align: right;
+}

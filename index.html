@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS @font-face Cheat Sheet</title>
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body id="top">
+        <header>
+            <h1>CSS @font-face Cheat Sheet</h1>
+            <span id="author-designer">Compiled and designed by <a href="https://davidofili.info" target="_blank">David Ofili</a> </span> 
+        </header>
+        <main>
+            <aside>
+                <p>
+                    See "<a href="#references">References & Recommended Resources</a>" below for comprehensive information about the <strong>@font-face</strong> rule.
+                </p>
+            </aside>
+            <!-- First Grid -->
+            <div class="article-grid">
+                <!-- Grid 1 Column 1 -->
+                <div class="grid-item">
+                    <!-- Fact Sheet Card -->
+                    <article class="article-card" id="factsheet">
+                        <h2 class="card-heading">Fact Sheet</h2>
+                        <div class="card-body">
+                            The <code class="code">@font-face</code> rule:
+                            <ul>
+                                <li>allows linking to fonts that are automatically fetched and activated when needed;</li>
+                                <li>allows loading locally-installed fonts on the user's computer, or from a remote server;</li>
+                                <li>instructs the browser to download a font from where it is hosted, then, display it as specified in the stylesheet;</li>
+                                <li>allows designers to not be limited to only fonts loaded on a user’s computer, which also vary depending on the OS;</li>
+                                <li>makes sticking with "Web safe" fonts unnecessary.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <!-- Usage Card -->
+                    <article class="article-card" id="usage">
+                        <h2 class="card-heading">Usage</h2>
+                        <div class="card-body">
+                            <ul>
+                                <li>Must consist of the <code class="code">@font-face</code> at-keyword.</li>
+                                <li>At-keyword is followed by a block of descriptor declarations.</li>
+                                <li>Each <code class="code">@font-face</code> rule specifies a value for every font descriptor, either implicitly or explicitly.</li>
+                                <li>Name must first be defined for a font (e.g. myFont) before pointing to the font file.</li>
+                                <li>Defined names are wrapped in single or double quotes.</li>
+                                <li>To use the defined font for an HTML element, refer to the name of the font (myFont) through the <code class="code">font-family</code> property:</li>
+                                <li>Describing the <code class="code">format</code> of the font resource referenced by the URL/path is optional.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <!-- Tip -->
+                    <aside class="article-card" id="tip">
+                        <h2 class="card-heading">Tip</h2>
+                        <div class="card-body">
+                            <em>.ttf</em> and <em>.otf</em> font files are comparatively larger. They also could have license agreement issues that might affect usage.
+                        </div>
+                    </aside>
+                </div>
+            
+                <!-- Grid 1 Column 2 -->
+                <div class="grid-item">
+                    <!-- Syntax Card -->
+                    <article class="article-card grid-item" id="syntax">
+                        <h2 class="card-heading">Syntax</h2>
+                        <div class="card-body">   
+                            <div>
+                                <p>To use a font called <em>DavidOfili</em>, see the rules below:</p>
+                            </div>
+                            <!-- First Code Canvas -->
+                            <div class="code-canvas">
+                                <div class="code">
+                                    <span class="purple">@font-face</span> {
+                                        <p class="indent">
+                                            font-family: <span class="green">DavidOfili</span>; <br>
+                                            src: <span class="red">url(</span><span class="green">"/fonts/DavidOfili.woff2"</span><span class="red">)</span> 
+                                            <span class="red">format(</span><span class="green">"woff2"</span><span class="red">)</span>; <br>
+                                        </p>
+                                    }
+                                    <br><br>
+                                    <span class="purple">p</span> { 
+                                        <p class="indent">
+                                            font-family: <span class="green">DavidOfili</span>, <span class="green">serif</span>; 
+                                        </p>
+                                    }   
+                                </div>
+                            </div>
+                            <div>
+                                The user agent will download <em>DavidOfili</em> and use it when rendering text within paragraph elements. 
+                                If for some reason the site serving the font is unavailable, the default <em>serif</em> font will be used.
+                            </div>
+                        </div>
+                    </article>
+                    <!-- More Examples -->
+                    <div class="section-grid">
+                        <article class="article-card" id="more-examples">
+                            <h2 class="card-heading">More Examples</h2>
+                            <div class="card-body">
+                                <p>
+                                    Another <code class="code">@font-face</code> rule containing descriptors for <strong>bold</strong> text must be added when used.
+                                </p>
+                                <div class="code-canvas">
+                                    <div class="code">
+                                        <span class="purple">@font-face</span> {
+                                            <p class="indent">
+                                                font-family: <span class="green">myNewFont</span>; <br>
+                                                src: <span class="red">url(</span><span class="green">"/fonts/roboto_bold.woff"</span><span class="red">)</span> <span class="red">format(</span><span class="green">"woff"</span><span class="red">)</span>;<br>
+                                                font-weight: <span class="green">bold</span>; 
+                                            </p>
+                                        }
+                                    </div>
+                                </div>
+                                <p>
+                                    The file <em>roboto_bold.woff</em> is another font file that contains the bold characters for the <em>Roboto</em> font.
+                                    Browsers will use this rule whenever a piece of text with the <code class="code">font-family</code> <em>myNewFont</em> should render as bold.
+                                    That way, you can have many <code class="code">@font-face</code> rules for the same font.
+                                </p>
+                            </div>
+                        </article>
+                        <!-- Heads-Up -->
+                        <article class="article-card" id="heads-up">
+                            <h2 class="card-heading">Heads-Up</h2>
+                            <div class="card-body">
+                                <ul>
+                                    <li>Define the <code class="code">@font-face</code> rule before any style in the stylesheet.</li>
+                                    <li>Font files must be on the same domain as the page using them, unless <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">HTTP access controls</a> are used to relax this restriction.</li>
+                                    <li>
+                                        <code class="code">@font-face</code> cannot be declared within a CSS selector. 
+                                        For example, the following will not work.
+                                    </li>
+                                </ul>
+                                <div class="code-canvas">
+                                    <div class="code">
+                                        <strong>.className</strong> { <br>
+                                            <div class="indent">
+                                                <span class="purple">@font-face</span> { <br>
+                                                    <p class="indent">
+                                                        font-family: <span class="green">DavidOfili</span>; <br>
+                                                        src: <span class="red">local(</span><span class="green">"Calibri-Bold"</span><span class="red">)</span>,<br>
+                                                        <span class="red">url(</span><span class="green">"/fonts/DavidOfili-bold.woff"</span><span class="red">)</span> <span class="red">format(</span><span class="green">"woff"</span><span class="red">)</span>;<br>
+                                                        font-weight: <span class="green">bold</span>; 
+                                                    </p>
+                                                } <br>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Grid  -->
+            <div class="article-grid2">
+                <!-- Grid 2 Column 1 -->
+                <div class="grid-item2">
+                    <!-- Font Types -->
+                    <section class="article-card" id="font-types">
+                        <h2 class="card-heading">Font Types</h2>
+                        <div class="card-body">
+                            <!-- Font Types Table -->
+                            <table id="table1">
+                                <thead id="thead1">
+                                    <tr>
+                                        <td>String</td>
+                                        <td class="middle-column">Font Format</td>
+                                        <td>Common extensions</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>"woff"</td>
+                                        <td>WOFF 1.0 (Web Open Font Format)</td>
+                                        <td>.woff</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"woff2"</td>
+                                        <td>WOFF 2.0 (Web Open Font Format)</td>
+                                        <td>.woff2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"truetype"</td>
+                                        <td>TrueType</td>
+                                        <td>.ttf</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"opentype"</td>
+                                        <td>OpenType</td>
+                                        <td>.ttf, .otf</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"embedded-opentype"</td>
+                                        <td>Embedded OpenType</td>
+                                        <td>.eot</td>
+                                    </tr>
+                                    <tr>
+                                        <td>"svg"</td>
+                                        <td>SVG Font</td>
+                                        <td>.svg, .svgz</td>
+                                    </tr>
+                                </tbody>
+                            </table>                              
+                        </div>
+                    </section>
+                </div>
+                <!-- Grid 2 Column 2 -->
+                <div class="grid-item2">
+                    <!-- Browser Support Card -->
+                    <section class="article-card" id="browser-support">
+                        <h2 class="card-heading">Browser Support</h2>
+                        <div class="card-body">
+                            <!-- Browser Support Table -->
+                            <table id="table2">
+                                <thead id="thead2">
+                                    <tr>
+                                        <td>Font <br>Format</td>
+                                        <td><img src="img/edge-x.png" width="30" height="30" alt="Edge Icon"><br><span class="small">Edge</span></td>
+                                        <td><img src="img/chrome-x.png" width="30" height="30" alt="Chrome Icon"> <br><span class="small">Chrome</span></td>
+                                        <td><img src="img/firefox-x.png" width="30" height="30" alt="Firefox Icon"><br><span class="small">Firefox</span></td>
+                                        <td><img src="img/safari-x.png" width="30" height="30" alt="Safari Icon"><br><span class="small">Safari</span></td>
+                                        <td><img src="img/opera-x.png" width="30" height="30" alt="Opera Icon"><br><span class="small">Opera</span></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TTF/OTF</td>
+                                        <td>9.0*</td>
+                                        <td>4.0</td>
+                                        <td>3.5</td>
+                                        <td>3.1</td>
+                                        <td>10.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WOFF</td>
+                                        <td>9.0</td>
+                                        <td>5.0</td>
+                                        <td>3.6</td>
+                                        <td>5.1</td>
+                                        <td>11.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>WOFF2</td>
+                                        <td>14.0</td>
+                                        <td>36.0</td>
+                                        <td>39.0</td>
+                                        <td>10.0</td>
+                                        <td>26.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SVG</td>
+                                        <td>Not supported</td>
+                                        <td>Not supported</td>
+                                        <td>Not supported</td>
+                                        <td>3.2</td>
+                                        <td>Not supported</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EOT</td>
+                                        <td>6.0</td>
+                                        <td>Not supported</td>
+                                        <td>Not supported</td>
+                                        <td>Not supported</td>
+                                        <td>Not supported</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- Third Table -->
+            <section class="article-card" id="font-descriptors">
+                <h2 class="card-heading">Font Property Descriptors</h2>
+                <div class="card-body">
+                    <!-- Font Property Descriptors -->
+                    <table id="table3">
+                        <thead id="thead3">
+                            <tr>
+                                <td class="name-column">Name</td>
+                                <td>Value</td>
+                                <td>Initial (Default)</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="code">font-family</code></td>
+                                <td><em>family-name</em></td>
+                                <td>N/A</td>
+                                <td><span class="red">Required*</span> | Defines font family name.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="code">src</code></td>
+                                <td><em>URL</em></td>
+                                <td>N/A</td>
+                                <td><span class="red">Required*</span> | Defines font download location / path.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="code">font-style</code></td>
+                                <td><em>normal | italic | oblique</em></td>
+                                <td>normal</td>
+                                <td><span class="green">Optional</span> | Defines the font's design.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="code">font-weight</code></td>
+                                <td><em>normal | bold | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</em></td>
+                                <td>normal</td>
+                                <td><span class="green">Optional</span> | Defines the font's thickness in appearance.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="code">font-stretch</code></td>
+                                <td><em>normal | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expanded | extra-expanded | ultra-expanded</em></td>
+                                <td>normal</td>
+                                <td><span class="green">Optional</span> | Allows fonts' expansion and contraction.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="code">unicode-range</code></td>
+                                <td><em>urange # </em></td>
+                                <td>U+0-10FFFF</td>
+                                <td><span class="green">Optional</span> | Defines the range of unicode characters the font supports.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- References & Recommended Resources -->
+            <section class="article-card" id="references">
+                <h2 class="card-heading">References & Recommended Resources</h2>
+                <div class="card-body">
+                    <ol>
+                        <li><cite>Coyier, C. (2021, December 31). How to use @font-face in CSS. Retrieved September 13, 2022, from CSS-Tricks: https://css-tricks.com/snippets/css/using-font-face-in-css/</cite></li>
+                        <li><cite>Mozilla. (2022, September 13). CSS: @font-face. Retrieved September 13, 2022, from MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face</cite></li>
+                        <li><cite>W3C. (2018, September 20). Font Resources: The @font-face rule. Retrieved September 13, 2022, from W3C Recommendation: https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-face-rule</cite></li>
+                        <li><cite>W3Schools. (2022). CSS @font-face Rule. Retrieved September 13, 2022, from W3Schools: https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp</cite></li>
+                    </ol>
+                </div>
+            </section>
+            <div id="to-top">
+                <a href="#top">Back to Top</a>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="site-credits">
+                <a href="index.html">@font-face Cheat Sheet</a> | Compiled and designed by <a href="https://davidofili.info" target="_blank">David Ofili</a>. <br>
+                <span class="small">Last modified | September 13, 2022 </span>
+            </div>
+            <div class="disclaimer small">
+                <p>
+                    This cheat sheet was compiled to be a quick and an easy-to-use reference tool. Although I have vetted the content
+                    of this work for correctness, as well as validated the codes with the <a href="https://validator.w3.org/" target="_blank">W3C markup validation</a> 
+                    and <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS validation</a> services, I cannot claim 100 percent accuracy
+                    of the subject matter and the work. Hence, I have provided references to the resources I consulted while compiling this cheat sheet.
+                </p>
+                <p>
+                    Nonetheless, this cheat sheet and all my works are open to correction and suggestions for improvement, as well as to help
+                    those who may find any of my works useful.
+                </p>
+            </div>
+            <div id="css-validation">
+                <p>
+                    <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+                        <img style="border:0;width:88px;height:31px"
+                            src="http://jigsaw.w3.org/css-validator/images/vcss"
+                            alt="Valid CSS!" />
+                    </a>
+                </p>                
+            </div>
+        </footer>
+    </body>
+</html>
