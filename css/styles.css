@@ -54,6 +54,7 @@ header h1 {
     font-family: 'Courier New', Courier, monospace;
 }
 
+
 /* MAIN */
 aside {
     background-color: #FFB3BB;
@@ -82,11 +83,11 @@ aside {
 }
 
 .card-body ul {
-    padding-left: 15px;
+    padding-left: 15px; 
 }
 
 /* MAIN: First Grid */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
     .article-grid { 
         display: grid;
         gap: 20px;
